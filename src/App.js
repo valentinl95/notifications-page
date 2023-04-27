@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import NotificationsView from "./NotificationsView.js";
+import NotificationsPageHeader from "./NotificationsPageHeader.js";
+import notifications from "./notifications.json";
+import avatars from "./avatars.json";
 
 function App() {
+  const [content, setContent] = useState(notifications);
+
+  function onMarkAllAsRead() {
+    setContent(prevContent => {
+      return prevContent.map(notification => {
+        return { ...notification, unreaded: false };
+      });
+    });
+  }
+
+  function onMarkAsRead(id) {
+    setContent(prevContent => prevContent.map(notification => (notification.id === id) ? { ...notification, unreaded: false } : notification));
+  }
+
+  const notificationsCount = content.filter((notification => {
+    return notification.unreaded === true;
+  })).length;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <NotificationsPageHeader notificationsCount={notificationsCount} readAllHandler={onMarkAllAsRead}/>
+      <NotificationsView content={content} readHandler={onMarkAsRead} avatars={avatars}/>
     </div>
-  );
+  )
 }
 
 export default App;
