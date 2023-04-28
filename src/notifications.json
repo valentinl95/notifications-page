@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "user": "Mark Webber",
         "action": "reacted_post",
         "target": "My first tournament today!",
@@ -8,14 +8,14 @@
         "unreaded": true
     },
     {
-        "id": 2,
+        "id": "2",
         "user": "Angela Gray",
         "action": "followed",
         "when": "5m ago",
         "unreaded": true
     },
     {
-        "id": 3,
+        "id": "3",
         "user": "Jacob Thompson",
         "action": "joined_group",
         "target": "Chess Club",
@@ -23,28 +23,57 @@
         "unreaded": true
     },
     {
-        "id": 4,
+        "id": "4",
         "user": "Rizky Hasanuddin",
         "action": "sent_message",
         "when": "5 days ago",
-        "additional_content": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
+        "additional_content": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+        "unreaded": true
     },
     {
-        "id": 5,
+        "id": "5",
         "user": "Kimberly Smith",
         "action": "commented_picture",
         "target": "Chess Club Picture",
         "when": "1 week ago"
     },
     {
-        "id": 6,
+        "id": "6",
         "user": "Nathan Peterson",
         "action": "reacted_post",
         "target": "5 end-game strategies to increase your win rate",
         "when": "2 weeks ago"
     },
     {
-        "id": 7,
+        "id": "7",
+        "user": "Anna Kim",
+        "action": "left_group",
+        "target": "Chess Club",
+        "when": "2 weeks ago"
+    },
+    {
+        "id": "8",
+        "user": "Anna Kim",
+        "action": "left_group",
+        "target": "Chess Club",
+        "when": "2 weeks ago"
+    },
+    {
+        "id": "9",
+        "user": "Anna Kim",
+        "action": "left_group",
+        "target": "Chess Club",
+        "when": "2 weeks ago"
+    },
+    {
+        "id": "10",
+        "user": "Anna Kim",
+        "action": "left_group",
+        "target": "Chess Club",
+        "when": "2 weeks ago"
+    },
+    {
+        "id": "11",
         "user": "Anna Kim",
         "action": "left_group",
         "target": "Chess Club",

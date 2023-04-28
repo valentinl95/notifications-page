@@ -16,7 +16,8 @@ function App() {
     });
   }
 
-  function onMarkAsRead(id) {
+  function onMarkAsRead(event) {
+    const id = event.currentTarget.dataset.id;
     setContent(prevContent => prevContent.map(notification => (notification.id === id) ? { ...notification, unreaded: false } : notification));
   }
 
@@ -25,9 +26,9 @@ function App() {
   })).length;
 
   return (
-    <div className="app">
+    <div className="app white-color-bg">
       <NotificationsPageHeader notificationsCount={notificationsCount} readAllHandler={onMarkAllAsRead}/>
-      <NotificationsView content={content} readHandler={onMarkAsRead} avatars={avatars}/>
+      <NotificationsView content={content} avatars={avatars} readHandler={onMarkAsRead}/>
     </div>
   )
 }

@@ -6,21 +6,217 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, #root {
   height: 100vh;
 }
 
-#root {
+body {
   --red-color: hsl(1, 90%, 64%);
   --blue-color: hsl(219, 85%, 26%);
   --white-color: hsl(0, 0%, 100%);
-  --very-light-grayish-blue-color: hsl(210, 60%, 98%);
+  --opaque-black-color: hsla(0, 0%, 0%, 5%);
+  --shadow-color: hsla(0, 0%, 0%, 3%);
+  --very-light-grayish-blue-color: hsl(228, 71.4%, 98.6%);
   --light-grayish-blue-1-color: hsl(211, 68%, 94%);
-  --light-grayish-blue-2-color: hsl(205, 33%, 90%);
+  --light-grayish-blue-2-color: hsl(205.71, 64%, 98%);
   --grayish-blue-color: hsl(219, 14%, 63%);
   --dark-grayish-blue-color: hsl(219, 12%, 42%);
   --very-dark-blue-color: hsl(224, 21%, 14%);
 
+  background-color: var(--very-light-grayish-blue-color);
+}
+
+#root {
   --font-size: 16px;
   font-size: var(--font-size);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: clamp(350px, 90vw, 800px);
+  height: auto;
+  margin-top: 5%;
+}
+
+.very-dark-blue-color {
+  color: var(--very-dark-blue-color);
+}
+
+.white-color {
+  color: var(--white-color);
+}
+
+.blue-color-bg {
+  background-color: var(--blue-color);
+}
+
+.white-color-bg {
+  background-color: var(--white-color);
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.font-size-header {
+  font-size: 1.5em;
+}
+
+.font-size-sub-header {
+  font-size: 1.2em;
+}
+
+.bullet {
+  color: var(--red-color);
+}
+
+.link.user, .link.target {
+  font-weight: 800;
+}
+
+.link.target, .action-text, .notification-card .additional-content, .notification-when {
+  color: var(--dark-grayish-blue-color);
+}
+
+.notification-when {
+  opacity: 0.5;
+}
+
+.notification-card .additional-content:hover {
+  background-color: var(--light-grayish-blue-1-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.header .left-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .right-side {
+  font-family: inherit;
+  font-size: 0.9em;
+  color: var(--dark-grayish-blue-color);
+  background: none;
+  border: none;
+}
+
+.header .right-side:hover, .link:hover {
+  color: var(--blue-color);
+}
+
+.header .right-side, .link, .notification-card .additional-content, .notifications-list .image-container img {
+  cursor: pointer;
+}
+
+.header .notifications-counter {
+  --font-size: 0.9em;
+  font-size: var(--font-size);
+
+  --base-box-size: 0.1em;
+  --top-padding: calc(1 * var(--base-box-size));
+  --bottom-padding: calc(2 * var(--base-box-size));
+  --left-right-padding: calc(6 * var(--base-box-size));
+  border-radius: calc(4 * var(--base-box-size));
+  padding: var(--top-padding) var(--left-right-padding) var(--bottom-padding);
+  margin-top: calc(2 * var(--base-box-size));
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 32px;
+
+  --avatar-size: 42px;
+  --content-gap: 12px;
+}
+
+.notification-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.notification-card .image-container {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border: 1px solid var(--opaque-black-color);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.notification-card .image-container:hover {
+  border-style: double;
+  border: 1px solid var(--opaque-black-color);
+  outline: 1px solid var(--opaque-black-color);
+  outline-offset: 4px;
+}
+
+.notification-card .image-container img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+}
+
+.notification-card.unreaded {
+  background-color: var(--light-grayish-blue-2-color);
+  box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--content-gap);
+}
+
+.notification-card .additional-content {
+  border: 1px solid var(--opaque-black-color);
+  border-radius: 4px;
+  margin-left: calc(var(--avatar-size) + var(--content-gap));
+  padding: 20px 24px;
+}
+
+.notification-content span {
+  white-space: pre-wrap;
+}
+
+.notification-content-start {
+  display: flex;
+  flex-direction: row;
+  gap: var(--content-gap);
+}
+
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    margin-top: 0;
+    min-width: 400px;
+    width: 100%;
+  }
 }
