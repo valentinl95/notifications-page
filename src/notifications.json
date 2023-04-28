@@ -27,8 +27,7 @@
         "user": "Rizky Hasanuddin",
         "action": "sent_message",
         "when": "5 days ago",
-        "additional_content": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-        "unreaded": true
+        "additional_content": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
     },
     {
         "id": "5",
@@ -46,34 +45,6 @@
     },
     {
         "id": "7",
-        "user": "Anna Kim",
-        "action": "left_group",
-        "target": "Chess Club",
-        "when": "2 weeks ago"
-    },
-    {
-        "id": "8",
-        "user": "Anna Kim",
-        "action": "left_group",
-        "target": "Chess Club",
-        "when": "2 weeks ago"
-    },
-    {
-        "id": "9",
-        "user": "Anna Kim",
-        "action": "left_group",
-        "target": "Chess Club",
-        "when": "2 weeks ago"
-    },
-    {
-        "id": "10",
-        "user": "Anna Kim",
-        "action": "left_group",
-        "target": "Chess Club",
-        "when": "2 weeks ago"
-    },
-    {
-        "id": "11",
         "user": "Anna Kim",
         "action": "left_group",
         "target": "Chess Club",
