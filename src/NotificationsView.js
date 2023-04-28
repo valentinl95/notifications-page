@@ -21,7 +21,7 @@ function NotificationItem({ content, avatar, picture_avatar, readHandler }) {
           </div>
         </div>
         {picture_avatar &&
-        <div className="image-container">
+        <div className="image-container rounded-square">
           <img src={"/" + picture_avatar} alt={target}/>
         </div>}
       </div>
